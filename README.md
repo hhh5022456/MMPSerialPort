@@ -1,4 +1,4 @@
-# SerialPort
+# MMPSerialPort
 
 [![](https://www.jitpack.io/v/hhh5022456/MMPSerialPort.svg)](https://www.jitpack.io/#hhh5022456/MMPSerialPort)
 ```
@@ -83,3 +83,47 @@ mSerialManager.getSerialPorts()
 ```
 mSerialManager.setGpioPowerPath()
 ```
+
+
+## ConfigurableThreadPool 使用指南
+
+`ConfigurableThreadPool` 是一个自定义的线程池实现，支持基本的任务提交和无限循环任务处理。下面是如何在您的项目中使用它的示例。
+
+### 基本任务提交
+
+首先，创建 `ConfigurableThreadPool` 的实例：
+
+```java
+ConfigurableThreadPool threadPool = new ConfigurableThreadPool(
+    5,  // 核心线程数
+    10, // 最大线程数
+    60, // 线程保持活动时间
+    TimeUnit.SECONDS,
+    100 // 队列容量
+);
+
+然后，创建并提交一个任务：
+Runnable singleTask = () -> {
+    System.out.println("这个任务正在运行在: " + Thread.currentThread().getName());
+    // 在这里添加您的任务逻辑
+};
+
+// 提交任务到线程池
+threadPool.submitTask(singleTask);
+
+最后，当不再需要线程池时，确保所有任务都已完成后关闭它：
+threadPool.shutdown();
+
+
+
+如果需要执行无限循环任务，可以按照以下步骤操作：
+
+ threadPool.startLoopingTask(() -> {
+    // 在这里添加无限循环执行的任务逻辑
+});
+
+在需要停止循环时：
+threadPool.stopLoopingTask();
+
+最后，当不再需要线程池 关闭它：
+threadPool.shutdown();
