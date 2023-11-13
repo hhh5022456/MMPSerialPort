@@ -1,6 +1,6 @@
 # SerialPort
 
-[![](https://jitpack.io/v/SpeedataG/SerialPort.svg)](https://jitpack.io/#SpeedataG/SerialPort)
+[![](https://www.jitpack.io/v/hhh5022456/MMPSerialPort.svg)](https://www.jitpack.io/#hhh5022456/MMPSerialPort)
 ```
 allprojects {
 		repositories {
@@ -9,7 +9,8 @@ allprojects {
 		}
 	}
 
-implementation 'com.github.SpeedataG:SerialPort:Tag'
+implementation 'com.github.hhh5022456:MMPSerialPort:v0.1.0'
+
 ```
 
 
@@ -78,5 +79,7 @@ mSerialManager.close()
 mSerialManager.getSerialPorts()
 ```
 
-
-
+上电gpio操作
+```
+mSerialManager.setGpioPowerPath()
+```
