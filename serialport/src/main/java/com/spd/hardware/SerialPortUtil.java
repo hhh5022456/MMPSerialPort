@@ -11,11 +11,13 @@ import java.util.Arrays;
 import java.util.List;
 
 
+
 /**
- * @author :Reginer  2023/3/28 0028 10:18.
- * 联系方式:QQ:282921012
- * 功能描述:
+ * Author by HanWenRui, Date on 2023/11/13.
+ * TODO: 禁止在构造方法中传递参数  违者斩立决
  */
+
+
 public class SerialPortUtil {
     /**
      * Hex string to bytes.

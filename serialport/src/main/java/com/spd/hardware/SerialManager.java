@@ -302,10 +302,11 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author :Reginer  2022/2/23 16:33.
- * 联系方式:QQ:282921012
- * 功能描述:串口操作类
+ * Author by HanWenRui, Date on 2023/11/13.
+ * TODO: 串口操作类
  */
+
+
 @SuppressWarnings("unused")
 public class SerialManager {
     private FileDescriptor fileDescriptor;
